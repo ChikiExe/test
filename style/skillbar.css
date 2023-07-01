@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    min-width: 100vh;
+    background: rgb(28, 28, 32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills{
+    width: 100%;
+    max-width: 600px;
+
+}
+
+.skill-name{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.skill-bar{
+    height: 15px;
+    background: rgb(16, 16, 16);
+    border-radius: 3px;
+}
+
+.skill-per{
+    height: 15px;
+    background: orangered;
+    position: relative;
+    border-radius: 3px;
+    animation: fillbars 3s 1;
+}
+
+.skill-per::before{
+    /* attr - позволяет пользоваться атрибутом */
+    content: attr(per);
+    position: absolute;
+    right: -16px;
+    top: -35px;
+    background: white;
+    padding: 4px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.skill-per::after{
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: white;
+    right: -1px;
+    top: -16px;
+    transform: rotate(45deg);
+}
+
+@keyframes fillbars{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
